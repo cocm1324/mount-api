@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { DATA_LENGTH } from '@constants';
-import { Page } from './page.entity';
+import { DATA_LENGTH } from '@models/constants';
+import { Page } from '@models/entities';
 
 @Entity({ name: 'mAboutUs' })
 export class AboutUs {

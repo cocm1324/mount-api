@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { DATA_LENGTH } from "../constants";
-import { Course } from "./course.entity";
+import { DATA_LENGTH } from "@models/constants";
+import { Course } from "@models/entities";
 
 @Entity()
 export class Category {

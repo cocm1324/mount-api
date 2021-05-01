@@ -1,11 +1,7 @@
 import { Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { DATA_LENGTH } from '@constants';
-import { PAGE_TYPE } from '@enums';
-import { AboutUs } from './about-us.entity';
-import { Course } from './course.entity';
-import { Notice } from './notice.entity';
-import { Banner } from './banner.entity';
-import { Content } from './content.entity';
+import { DATA_LENGTH } from '@models/constants';
+import { PAGE_TYPE } from '@models/enums';
+import { AboutUs, Course, Notice, Banner, Content } from '@models/entities';
 
 @Entity({ name: 'mPage' })
 export class Page {

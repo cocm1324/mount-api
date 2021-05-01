@@ -1,6 +1,5 @@
 import { Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { ImageLink } from "./image-link.entity";
-import { Page } from "./page.entity";
+import { Page, ImageLink } from "@models/entities";
 
 @Entity({ name: 'mContent' })
 export class Content {

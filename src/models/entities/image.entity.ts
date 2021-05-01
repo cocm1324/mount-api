@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { DATA_LENGTH } from "../constants";
-import { ImageLink } from "./image-link.entity";
+import { DATA_LENGTH } from "@models/constants";
+import { ImageLink } from "@models/entities";
 
 @Entity({ name: 'mImage' })
 export class Image {

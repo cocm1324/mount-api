@@ -1,8 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { DATA_LENGTH } from "../constants";
-import { BANNER_TYPE } from "../enums";
-import { ImageLink } from "./image-link.entity";
-import { Page } from "./page.entity";
+import { DATA_LENGTH } from "@models/constants";
+import { BANNER_TYPE } from "@models/enums";
+import { ImageLink, Page } from "@models/entities";
 
 @Entity({ name: 'mBanner' })
 export class Banner {

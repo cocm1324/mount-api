@@ -1,8 +1,5 @@
-import { Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Banner } from "./banner.entity";
-import { Content } from "./content.entity";
-import { Course } from "./course.entity";
-import { Image } from "./image.entity";
+import { Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Banner, Course, Content, Image } from "@models/entities";
 
 @Entity({ name: 'mImageLink' })
 export class ImageLink {

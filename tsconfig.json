@@ -18,9 +18,8 @@
 		"paths": {
 			"@src/*": [ "src/*" ],
 			"@services": [ "src/services/index.ts" ],
-			"@constants": [ "src/models/constants/index.ts" ],
-			"@enums": [ "src/models/enums/index.ts" ],
-			"@entities": [ "src/models/entities/index.ts" ],
+			"@models/*": [ "src/models/*" ],
+			"@routers/*": [ "src/routers/*" ]
 		}
 	},
 	"files": [
