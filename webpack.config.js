@@ -1,7 +1,10 @@
 const { SourceMapDevToolPlugin } = require('webpack');
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
+
 const Dotenv = require('dotenv-webpack');
 const { join } = require('path');
+
 
 module.exports = (env) => {
 
@@ -14,6 +17,7 @@ module.exports = (env) => {
         entry: { bundle: join(__dirname, 'src', 'main.ts') },
         output: { path: join(__dirname, 'dist'), filename: '[name].js' },
         optimization: { minimize: false },
+        externals: [ nodeExternals() ],
         resolve: {
             extensions: ['.ts', '.js'],
             plugins: [ new TsconfigPathsPlugin() ]

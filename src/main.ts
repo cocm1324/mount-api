@@ -1,7 +1,10 @@
-const hello = process.env.HELLO;
+import 'reflect-metadata';
 
-export function print(str: string): void {
-    console.log(str);
-}
+import { OrmService } from '@services';
+import { AboutUs, Page, Course, Notice } from '@entities';
 
-print(hello);
+const ormService = new OrmService([ AboutUs, Page, Course, Notice ]);
+
+ormService.getConnection().then(result => {
+    console.log('yay');
+})

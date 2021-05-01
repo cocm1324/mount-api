@@ -11,11 +11,16 @@
 		"resolveJsonModule": true,
 		"baseUrl": "./",
 		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
 		"typeRoots": [
 			"node_modules/@types"
 		],
 		"paths": {
-			"@src/*": ["src/*"]
+			"@src/*": [ "src/*" ],
+			"@services": [ "src/services/index.ts" ],
+			"@constants": [ "src/models/constants/index.ts" ],
+			"@enums": [ "src/models/enums/index.ts" ],
+			"@entities": [ "src/models/entities/index.ts" ],
 		}
 	},
 	"files": [
