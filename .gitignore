@@ -4,6 +4,7 @@ node_modules
 # Secrets
 **/.env.*
 !environments/.env.example
+ormconfig.json
 
 # misc
 package-lock.json

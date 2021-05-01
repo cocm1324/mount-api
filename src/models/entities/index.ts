@@ -5,3 +5,5 @@ export * from './notice.entity';
 export * from './banner.entity';
 export * from './content.entity';
 export * from './category.entity';
+export * from './image.entity';
+export * from './image-link.entity';

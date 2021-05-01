@@ -17,21 +17,22 @@ export class Page {
     type: PAGE_TYPE;
 
     @OneToOne(() => AboutUs, aboutUs => aboutUs.page)
-    @JoinColumn()
+    @JoinColumn({ name: 'aboutUs' })
     aboutUs: AboutUs;
 
-    @OneToOne(() => Course, course => course.page)
-    @JoinColumn()
+    @OneToOne(() => Course, course => course.page, { onDelete: 'CASCADE' })
+    @JoinColumn({ name: 'course'})
     course: Course;
 
-    @OneToOne(() => Notice, notice => notice.page)
-    @JoinColumn()
+    @OneToOne(() => Notice, notice => notice.page, { onDelete: 'CASCADE' })
+    @JoinColumn({ name: 'notice' })
     notice: Notice;
 
-    @OneToOne(() => Banner, banner => banner.page)
-    @JoinColumn()
+    @OneToOne(() => Banner, banner => banner.page, { onDelete: 'CASCADE' })
+    @JoinColumn({ name: 'banner' })
     banner: Banner;
 
-    @OneToMany(() => Content, content => content.page)
+    @OneToMany(() => Content, content => content.page, { onDelete: 'CASCADE' })
+    @JoinColumn({ name: 'content' })
     content: Content[];
 }
