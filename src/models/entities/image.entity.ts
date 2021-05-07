@@ -15,5 +15,5 @@ export class Image {
     extension: string;
 
     @OneToMany(() => ImageLink, imageLink => imageLink.image, { onDelete: 'RESTRICT' })
-    link: ImageLink[];    
+    link: ImageLink[];
 }
