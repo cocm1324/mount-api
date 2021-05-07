@@ -1,7 +1,7 @@
-import * as express from 'express';
-import * as bodyParser from 'body-parser';
-import * as cors from 'cors';
-import * as fileUpload from 'express-fileupload';
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import fileUpload from 'express-fileupload';
 
 import { Router, Request, Response, Express } from 'express';
 
@@ -12,8 +12,8 @@ const SERVER_PORT = process.env.SERVER_PORT;
 
 export class ExpressService {
 
-    app: Express;
-    rootRouter: Router;
+    private app: Express;
+    private rootRouter: Router;
 
     constructor() {
 
@@ -31,7 +31,7 @@ export class ExpressService {
         this.app.get(BASE_ROUTE.ROOT, this.healthCheck);
     }
 
-    healthCheck(req: Request, res: Response) {
+    private healthCheck(_: Request, res: Response) {
         res.send('Hello from API');
     }
 
@@ -39,6 +39,10 @@ export class ExpressService {
         const path = routerInstance.path;
         const router = routerInstance.router;
         this.app.use(path, router);
+    }
+
+    registerStatic(actualPath: string, mappedPath: string) {
+        this.app.use(mappedPath, express.static(actualPath));
     }
 
     startServer() {

@@ -12,7 +12,7 @@ export class Image {
     name: string;
 
     @Column({ nullable: false, length: DATA_LENGTH.EXTENTION })
-    extention: string;
+    extension: string;
 
     @OneToMany(() => ImageLink, imageLink => imageLink.image, { onDelete: 'RESTRICT' })
     link: ImageLink[];    

@@ -24,15 +24,15 @@ export class BaseRouter {
     }
 
     protected registerPost(endpoint: string, controllerFn: ControllerFn) {
-        this._router.get(endpoint, controllerFn);
+        this._router.post(endpoint, controllerFn);
     }
 
     protected registerPut(endpoint: string, controllerFn: ControllerFn) {
-        this._router.get(endpoint, controllerFn);
+        this._router.put(endpoint, controllerFn);
     }
 
     protected registerDelete(endpoint: string, controllerFn: ControllerFn) {
-        this._router.get(endpoint, controllerFn);
+        this._router.delete(endpoint, controllerFn);
     }
 
 }

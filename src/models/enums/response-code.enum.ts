@@ -1,0 +1,9 @@
+export enum USER_ERROR_CODE {
+    BAD_REQUEST = 401,
+    DELETE_RESTRICTED = 411,
+}
+
+export enum SERVER_ERROR_CODE {
+    INTERNAL_SERVER_ERROR = 500,
+    FAILED_TO_SAVE = 501.
+}
