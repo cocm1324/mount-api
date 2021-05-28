@@ -4,7 +4,7 @@ import { Banner, Course, Content, Image } from "@models/entities";
 @Entity({ name: 'mImageLink' })
 export class ImageLink {
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    readonly id: string;
 
     @ManyToOne(() => Image, image => image.link, { onDelete: 'RESTRICT' })
     @JoinColumn({ name: 'image' })
@@ -12,13 +12,13 @@ export class ImageLink {
 
     @OneToOne(() => Content, content => content.imageLink, { onDelete: 'CASCADE' })
     @JoinColumn({ name: 'content' })
-    content: Content[];
+    content: Content;
 
     @OneToOne(() => Course, course => course.thumbnailLink, { onDelete: 'CASCADE' })
     @JoinColumn({ name: 'courseThumbnail' })
-    courseThumbnail: Course[];
+    courseThumbnail: Course;
 
     @OneToOne(() => Banner, banner => banner.imageLink, { onDelete: 'CASCADE' })
     @JoinColumn({ name: 'banner' })
-    banner: Banner[];
+    banner: Banner;
 }

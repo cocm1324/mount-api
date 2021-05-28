@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { DATA_LENGTH } from '@models/constants';
 import { Page } from '@models/entities';
 
@@ -12,6 +12,25 @@ export class Notice {
     name: string;
 
     @OneToOne(() => Page, page => page.notice, { onDelete: 'CASCADE' })
-    @JoinColumn({ name: 'page' })
+    @JoinColumn({ name: 'id' })
     page: Page;
+
+    @CreateDateColumn()
+    createDatetime;
+
+    @UpdateDateColumn()
+    updateDatetime;
+
+    @BeforeInsert()
+    beforeInsert() {
+        const today = new Date();
+        this.createDatetime = today;
+        this.updateDatetime = today;
+    }
+
+    @BeforeUpdate()
+    beforeUpdate() {
+        const today = new Date();
+        this.updateDatetime = today;
+    }
 }

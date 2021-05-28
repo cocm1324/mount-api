@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { DATA_LENGTH } from "@models/constants";
 import { ImageLink } from "@models/entities";
 
@@ -14,6 +14,18 @@ export class Image {
     @Column({ nullable: false, length: DATA_LENGTH.EXTENTION })
     extension: string;
 
-    @OneToMany(() => ImageLink, imageLink => imageLink.image, { onDelete: 'RESTRICT' })
+    @OneToMany(() => ImageLink, imageLink => imageLink.image)
     link: ImageLink[];
+
+    @CreateDateColumn()
+    createDatetime;
+
+    @UpdateDateColumn()
+    updateDatetime;
+
+    @BeforeInsert()
+    beforeInsert() {
+        const today = new Date();
+        this.createDatetime = today;
+    }
 }

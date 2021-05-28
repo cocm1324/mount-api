@@ -1,5 +1,5 @@
-import { Expose, Type } from "class-transformer";
-import { IsEnum } from "class-validator";
+import { Expose, Transform, Type } from "class-transformer";
+import { IsDefined, IsEnum, IsUUID } from "class-validator";
 import { Page } from "../entities";
 import { PAGE_TYPE } from "../enums";
 import { CreateAboutUsInput } from "./about-us.dto";
@@ -34,6 +34,14 @@ export class CreatePageInput {
     @Expose()
     @Type(() => CreateContentInput)
     content: CreateContentInput[];
+}
+
+export interface AssociatePageInput extends Pick<Page, 'id'> {}
+export class AssociatePageInput {
+    @Expose()
+    @IsDefined()
+    @IsUUID()
+    id: string;
 }
 
 export class GetPageOutput {

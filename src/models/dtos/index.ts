@@ -6,3 +6,5 @@ export * from './banner.dto';
 export * from './content.dto';
 export * from './course.dto';
 export * from './notice.dto';
+export * from './category.dto';
+export * from './image-link.dto';
