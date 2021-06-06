@@ -27,7 +27,7 @@ export class Page {
     @OneToOne(() => Banner, banner => banner.page, { cascade: [ 'insert' ] })
     banner: Banner;
 
-    @OneToMany(() => Content, content => content.page)
+    @OneToMany(() => Content, content => content.pageId)
     content: Content[];
     
     @CreateDateColumn({ name: 'createDatetime', nullable: true })

@@ -9,9 +9,12 @@ export class Content {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
+    @Column()
+    page: Page;
+
     @ManyToOne(() => Page, page => page.content, { onDelete: 'CASCADE' })
     @JoinColumn({ name: 'page' })
-    page: Page;
+    pageId: Page;
 
     @Column({ length: DATA_LENGTH.ENUMS })
     type: CONTENT_TYPE;

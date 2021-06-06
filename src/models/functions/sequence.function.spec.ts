@@ -75,6 +75,25 @@ test("Get Up Sequence Function 3", () => {
     expect(result).toMatchObject({ seq: 5, seqBase: 2 });
 });
 
+test("Get Up Sequence Function 3", () => {
+    const testCase = [
+        { seq: 1, seqBase: 1 }, // 1
+        { seq: 2, seqBase: 1 }, // 2
+    ]
+    const testTarget = { seq: 2, seqBase: 1 };
+    const result = getUpSequence(testCase, testTarget);
+    expect(result).toMatchObject({ seq: 1, seqBase: 2 });
+});
+
+test("Get Up Sequence Function 4", () => {
+    const testCase = [
+        { seq: 1, seqBase: 1 }, // 1
+    ]
+    const testTarget = { seq: 1, seqBase: 1 };
+    const result = getUpSequence(testCase, testTarget);
+    expect(result).toMatchObject({ seq: 1, seqBase: 1 });
+});
+
 test("Get Down Sequence Function 1", () => {
     const testCase = [
         { seq: 1, seqBase: 1 },
@@ -115,4 +134,23 @@ test("Get Down Sequence Function 3", () => {
     const testTarget = { seq: 1, seqBase: 2 };
     const result = getDownSequence(testCase, testTarget);
     expect(result).toMatchObject({ seq: 3, seqBase: 2 });
+});
+
+test("Get Down Sequence Function 4", () => {
+    const testCase = [
+        { seq: 1, seqBase: 1 },
+        { seq: 2, seqBase: 1 }
+    ]
+    const testTarget = { seq: 1, seqBase: 1 };
+    const result = getDownSequence(testCase, testTarget);
+    expect(result).toMatchObject({ seq: 3, seqBase: 1 });
+});
+
+test("Get Down Sequence Function 5", () => {
+    const testCase = [
+        { seq: 1, seqBase: 1 }
+    ]
+    const testTarget = { seq: 1, seqBase: 1 };
+    const result = getDownSequence(testCase, testTarget);
+    expect(result).toMatchObject({ seq: 1, seqBase: 1 });
 });

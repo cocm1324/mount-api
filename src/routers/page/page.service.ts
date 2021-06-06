@@ -51,8 +51,9 @@ export class PageService {
                 } else {
                     return pageRepository.save(createPageInput);
                 }
-            }).then(_ => {
-                res.send(responseService.Success(true));
+            }).then(result => {
+                const { id } = result;
+                res.send(responseService.Success(id));
             }).catch(error => {
                 res.send(responseService.InternalServerError(JSON.stringify(error)));
             });
